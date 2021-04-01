@@ -45,6 +45,8 @@ const DecentralisedRenderer: React.FunctionComponent<DecentralisedRendererProps>
     (frame) => {
       toFrame.current = frame;
       if (toFrame.current) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore upgrade everything to oa v5
         toFrame.current(renderDocument({ document, rawDocument }));
       }
     },
@@ -62,6 +64,8 @@ const DecentralisedRenderer: React.FunctionComponent<DecentralisedRendererProps>
       const newDocument = getData(updatedDocument);
 
       if (toFrame.current) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore upgrade everything to oa v5
         toFrame.current(renderDocument({ document: newDocument, rawDocument: documentRef.current }));
       }
     } else if (action.type === "UPDATE_TEMPLATES") {
